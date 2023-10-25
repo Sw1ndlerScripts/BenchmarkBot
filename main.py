@@ -5,7 +5,6 @@ from selenium.webdriver.chrome.service import Service
 
 from utils.DriverManager import DriverManager
 from utils.TestWrapper import Test
-from utils.Utils import fetchResource
 
 from benchmarks.ReactionTime import ReactionTime
 from benchmarks.Typing import Typing
