@@ -33,7 +33,7 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option("useAutomationExtension", False)
 
 if USE_ADBLOCK:
-    options.add_extension("uBlock-Origin.crx")
+    options.add_extension("assets/uBlock-Origin.crx")
 
 driver = webdriver.Chrome(service=service, options=options)
 
