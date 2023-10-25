@@ -2,14 +2,10 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.common.by import By
-from selenium.common.exceptions import NoSuchElementException
-from selenium.webdriver.remote.webdriver import WebDriver
-from selenium.webdriver.remote.webelement import WebElement
-from selenium.webdriver.common.action_chains import ActionChains
 
 from utils.DriverManager import DriverManager
 from utils.TestWrapper import Test
+from utils.Utils import fetchResource
 
 from benchmarks.ReactionTime import ReactionTime
 from benchmarks.Typing import Typing
@@ -20,7 +16,8 @@ from benchmarks.VerbalMemory import VerbalMemory
 
 # Constants
 
-USE_ADBLOCK = True
+USE_ADBLOCK = False
+ADBLOCK_PATH = "uBlock-Origin.crx" # Not included in repo
 
 # Variables
 
@@ -33,7 +30,7 @@ options.add_experimental_option("excludeSwitches", ["enable-automation"])
 options.add_experimental_option("useAutomationExtension", False)
 
 if USE_ADBLOCK:
-    options.add_extension("assets/uBlock-Origin.crx")
+    options.add_extension(ADBLOCK_PATH)
 
 driver = webdriver.Chrome(service=service, options=options)
 

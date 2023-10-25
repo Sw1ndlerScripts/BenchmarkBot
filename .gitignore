@@ -1,4 +1,11 @@
-.venv
-.vscode
+.venv/
+.vscode/
+
+build/
+dist/
+
+main.spec
+uBlock-Origin.crx
+
 *.pyc
 *.pyo
